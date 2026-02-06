@@ -46,7 +46,7 @@ let currentCategory = 'length';
 // INITIALIZATION
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Unit Converter App Initialized');
     setupEventListeners();
 });
@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function setupEventListeners() {
     // Convert button click
     convertBtn.addEventListener('click', handleConversion);
-    
+
     // Enter key in input field
-    inputValue.addEventListener('keypress', function(e) {
+    inputValue.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             handleConversion();
         }
@@ -68,7 +68,7 @@ function setupEventListeners() {
 
     // Navigation links click
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             handleNavigation(this);
         });
@@ -84,7 +84,7 @@ function setupEventListeners() {
 
 function handleConversion() {
     const value = parseFloat(inputValue.value);
-    
+
     // Validate input
     if (isNaN(value) || value === '') {
         result.style.display = 'none';
@@ -105,13 +105,13 @@ function handleConversion() {
 
 function convertUnits(value, fromUnitName, toUnitName) {
     const rates = conversionRates[currentCategory];
-    
+
     // Convert from source unit to base unit
     const baseValue = value * rates[fromUnitName];
-    
+
     // Convert from base unit to target unit
     const converted = baseValue / rates[toUnitName];
-    
+
     return converted.toFixed(4);
 }
 
@@ -122,7 +122,7 @@ function convertTemperature(value, fromUnit, toUnit) {
     if (fromUnit === 'celsius') {
         celsius = value;
     } else if (fromUnit === 'fahrenheit') {
-        celsius = (value - 32) * 5/9;
+        celsius = (value - 32) * 5 / 9;
     } else if (fromUnit === 'kelvin') {
         celsius = value - 273.15;
     }
@@ -132,7 +132,7 @@ function convertTemperature(value, fromUnit, toUnit) {
     if (toUnit === 'celsius') {
         result = celsius;
     } else if (toUnit === 'fahrenheit') {
-        result = (celsius * 9/5) + 32;
+        result = (celsius * 9 / 5) + 32;
     } else if (toUnit === 'kelvin') {
         result = celsius + 273.15;
     }
@@ -178,7 +178,7 @@ function getUnitLabel(unit) {
 function handleNavigation(clickedLink) {
     // Remove active class from all links
     navLinks.forEach(link => link.classList.remove('active'));
-    
+
     // Add active class to clicked link
     clickedLink.classList.add('active');
 
@@ -195,17 +195,17 @@ function handleNavigation(clickedLink) {
 
 function updateUnitOptions(category) {
     const units = conversionRates[category];
-    
+
     // Clear existing options
     fromUnit.innerHTML = '';
     toUnit.innerHTML = '';
 
     // Add new options based on category
     const unitList = Object.keys(units);
-    
+
     unitList.forEach(unit => {
         const label = getUnitLabel(unit);
-        
+
         // From unit dropdown
         const fromOption = document.createElement('option');
         fromOption.value = unit;
