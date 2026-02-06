@@ -9,70 +9,30 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Unit Converter</h1>
-            <p class="tagline">Convert between different units easily</p>
-        </div>
+    <header class="app-header">
+        <h1>Unit Converter</h1>
+        <p class="subtitle">Convert between different units easily</p>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link active" data-category="length">Length</a></li>
-                <li><a href="#" class="nav-link" data-category="weight">Weight</a></li>
-                <li><a href="#" class="nav-link" data-category="temperature">Temperature</a></li>
-                <li><a href="#" class="nav-link" data-category="volume">Volume</a></li>
-            </ul>
-        </div>
+    <nav class="app-nav">
+        <ul>
+            <li><a href="#length" class="nav-link active" data-category="length">Length</a></li>
+            <li><a href="#weight" class="nav-link" data-category="weight">Weight</a></li>
+            <li><a href="#temperature" class="nav-link" data-category="temperature">Temperature</a></li>
+            <li><a href="#volume" class="nav-link" data-category="volume">Volume</a></li>
+        </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <section class="converter-section">
-                <div class="converter-card">
-                    <h2>Converter</h2>
-                    <div class="converter-form">
-                        <div class="input-group">
-                            <label for="inputValue">From:</label>
-                            <input type="number" id="inputValue" placeholder="Enter value" />
-                            <select id="fromUnit">
-                                <option value="meter">Meter (m)</option>
-                                <option value="kilometer">Kilometer (km)</option>
-                                <option value="foot">Foot (ft)</option>
-                                <option value="mile">Mile (mi)</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="toUnit">To:</label>
-                            <select id="toUnit">
-                                <option value="meter">Meter (m)</option>
-                                <option value="kilometer">Kilometer (km)</option>
-                                <option value="foot">Foot (ft)</option>
-                                <option value="mile">Mile (mi)</option>
-                            </select>
-                        </div>
-
-                        <button id="convertBtn" class="convert-btn">Convert</button>
-                    </div>
-
-                    <div class="result" id="result" style="display: none;">
-                        <p>Result: <span id="resultValue"></span> <span id="resultUnit"></span></p>
-                    </div>
-                </div>
-            </section>
+    <main class="app-main">
+        <div class="converter-container">
+            <div class="converter-section" id="converter-content">
+                <!-- Dynamic content will be loaded here -->
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Unit Converter App. All rights reserved.</p>
-        </div>
+    <footer class="app-footer">
+        <p>&copy; 2024 Unit Converter App. All rights reserved.</p>
     </footer>
 
     <script src="unit-converter.js"></script>
