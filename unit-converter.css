@@ -87,6 +87,109 @@ body {
     min-height: 300px;
 }
 
+.converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.input-group input,
+.input-group select {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-group input {
+    flex: 1;
+    min-width: 150px;
+}
+
+.input-group select {
+    flex: 1;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group>div {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input,
+.input-group select {
+    flex: 1;
+}
+
+.swap-button {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+#swap-units {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+#swap-units:hover {
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+#swap-units:active {
+    transform: scale(0.95);
+}
+
 .app-footer {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
